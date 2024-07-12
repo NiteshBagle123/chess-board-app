@@ -4,7 +4,7 @@ const {
       MINIMUM_ASCII_VALUE, MAXIMUM_ASCII_VALUE, MINIMUM_POSITION, MAX_POSITION
     }
   }
-} = require('../utils');
+} = require('../../utils');
 
 module.exports = (position) => {
   const chessPositionArray = position.split('');
