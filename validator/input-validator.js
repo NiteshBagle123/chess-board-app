@@ -1,3 +1,5 @@
+const logger = require('../logger');
+
 const {
   constant: {
     INPUT_PARAMS_LENGTH,
@@ -23,16 +25,22 @@ module.exports = (processArgvParams) => {
   // validate input length from command line
   if (processArgvParams.length < INPUT_PARAMS_LENGTH) {
     // eslint-disable-next-line max-len
-    console.log('Please provide input in terminal with format node <file_name> <type> <position> for example: nodejs index.js pawn A1');
-    return FAILURE;
+    const errorMessage = 'Please provide input in terminal with format node <file_name> <type> <position> for example: nodejs index.js pawn A1';
+    logger.error(errorMessage);
+    return {
+      status: FAILURE,
+      message: errorMessage
+    };
   }
 
   const [, , type, position] = processArgvParams;
   // check for chess piece type
   if (!Object.values(CHESS_PIECE_TYPE).includes(type.toLowerCase())) {
-    console.log(`Please provide valid chess piece type like ${PAWN}, ${KING} or ${QUEEN}`);
+    const errorMessage = `Please provide valid chess piece type like ${PAWN}, ${KING} or ${QUEEN}`;
+    logger.error(errorMessage);
     return {
-      status: FAILURE
+      status: FAILURE,
+      message: errorMessage
     };
   }
 
@@ -40,9 +48,11 @@ module.exports = (processArgvParams) => {
   const chessPositionArray = position.split('');
   if (chessPositionArray.length < MINIMUM_POSITION_LENGTH) {
     // eslint-disable-next-line max-len
-    console.log(`Chess position: ${position} value is invalid. Please provide valid chess position which starts from (A, B, ...H)(1,2 ...8) for example A1, H8`);
+    const errorMessage = `Chess position: ${position} value is invalid. Please provide valid chess position which starts from (A, B, ...H)(1,2 ...8) for example A1, H8`;
+    logger.error(errorMessage);
     return {
-      status: FAILURE
+      status: FAILURE,
+      message: errorMessage
     };
   }
 
@@ -57,9 +67,11 @@ module.exports = (processArgvParams) => {
     || (positionSubString1AsciiValue > MAXIMUM_ASCII_VALUE[0])
   ) {
     // eslint-disable-next-line max-len
-    console.log(`Chess position: ${position} is invalid. It should starts with A, B, ..H as chessboard is an 8 x 8 grid with 64 cells in it`);
+    const errorMessage = `Chess position: ${position} is invalid. It should starts with A, B, ..H as chessboard is an 8 x 8 grid with 64 cells in it`;
+    logger.error(errorMessage);
     return {
-      status: FAILURE
+      status: FAILURE,
+      message: errorMessage
     };
   }
 
@@ -69,9 +81,11 @@ module.exports = (processArgvParams) => {
     || (positionSubString2AsciiValue > MAXIMUM_ASCII_VALUE[1])
   ) {
     // eslint-disable-next-line max-len
-    console.log(`Chess position: ${position} is invalid. It should ends with 1, 2, ..8 as chessboard is an 8 x 8 grid with 64 cells in it`);
+    const errorMessage = `Chess position: ${position} is invalid. It should ends with 1, 2, ..8 as chessboard is an 8 x 8 grid with 64 cells in it`;
+    logger.error(errorMessage);
     return {
-      status: FAILURE
+      status: FAILURE,
+      message: errorMessage
     };
   }
 

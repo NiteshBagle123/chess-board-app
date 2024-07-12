@@ -1,2 +1,13 @@
 2024-07-12T07:26:32.508Z info: A7,C7,D7,E7,F7,G7,H7,B1,B2,B3,B4,B5,B6,B8,A8,C6,D5,E4,F3,G2,H1,A6,C8
 A7,C7,D7,E7,F7,G7,H7,B1,B2,B3,B4,B5,B6,B8,A8,C6,D5,E4,F3,G2,H1,A6,C8
+Please provide valid chess piece type like pawn, king or queen
+Please provide input in terminal with format node <file_name> <type> <position> for example: nodejs index.js pawn A1
+Please provide valid chess piece type like pawn, king or queen
+Please provide valid chess piece type like pawn, king or queen
+Chess position: test1 is invalid. It should starts with A, B, ..H as chessboard is an 8 x 8 grid with 64 cells in it
+Chess position: Atest is invalid. It should ends with 1, 2, ..8 as chessboard is an 8 x 8 grid with 64 cells in it
+A2
+A2
+A2,B1,B2
+C4,C5,C6,D4,D6,E4,E5,E6
+A5,B5,C5,E5,F5,G5,H5,D1,D2,D3,D4,D6,D7,D8,A8,B7,C6,E4,F3,G2,H1,A2,B3,C4,E6,F7,G8
