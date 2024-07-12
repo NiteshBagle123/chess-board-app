@@ -17,9 +17,14 @@ module.exports = (processArgvParams) => {
   // Step 1: Validate input from user
   const inputValidatorResponse = inputValidator(processArgvParams);
 
-  const { status, type, position } = inputValidatorResponse;
+  const {
+    status, type, position, message
+  } = inputValidatorResponse;
   if (status === FAILURE) {
-    return status;
+    return {
+      status,
+      message
+    };
   }
 
   // Step 2: Type: Pawn and position: any (between A1 - H8)
