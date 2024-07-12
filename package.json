@@ -33,5 +33,9 @@
   },
   "dependencies": {
     "winston": "^3.13.1"
-  }
+  },
+  "testMatch": [
+    "**/__tests__/**/*.js",
+    "!**/__tests__/**/fixtures/*.js"
+  ]
 }
