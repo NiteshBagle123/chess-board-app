@@ -22,7 +22,7 @@ module.exports = (position) => {
     .toUpperCase()
     .charCodeAt();
 
-  // A - H of positionSubString2 element with same position number
+  // Step 1 - A - H of positionSubString2 element with same position number
   const sameElementSeriesArr1 = [];
   for (
     let index = MINIMUM_ASCII_VALUE[0];
@@ -35,7 +35,7 @@ module.exports = (position) => {
     }
   }
 
-  // A - H of positionSubString1 all position series (1 - 8) except input position
+  // Step 2 - A - H of positionSubString1 all position series (1 - 8) except input position
   const sameElementSeriesArr2 = [];
   for (let index = 0; index < MAX_POSITION; index += 1) {
     if (positionSubString2NumberVal !== index + MINIMUM_POSITION) {
@@ -49,10 +49,10 @@ module.exports = (position) => {
   const column = COLUMN[position.charAt(0)];
   const row = 8 - parseInt(position.charAt(1), 10);
 
-  // Calculate main diagonal elements
+  // Step 3 - Calculate main diagonal elements
   const mainDiagonalResponse = mainDiagonals(row, column);
 
-  // Calculate anti-diagonal elements
+  // Step 4 - Calculate anti-diagonal elements
   const antiDiagonalResponse = antiDiagonals(row, column);
 
   return [
