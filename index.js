@@ -1,4 +1,3 @@
 const { chessProcessor } = require('./processor');
 
-const chessProcessing = chessProcessor(process.argv);
-
+chessProcessor(process.argv);
