@@ -1,3 +1,5 @@
+const logger = require('../logger');
+
 const { inputValidator } = require('../validator');
 const {
   constant: {
@@ -24,18 +26,19 @@ module.exports = (processArgvParams) => {
   let chessPieceResponse = '';
   if (type === PAWN) {
     chessPieceResponse = pawnPositionEvaluation(position);
-    console.log(chessPieceResponse);
+    logger.info(chessPieceResponse);
   }
 
   // Step 3: Type: King and position any (between A1 - H8)
   if (type === KING) {
     chessPieceResponse = kingPositionEvaluation(position);
-    console.log(chessPieceResponse.join());
+    logger.info(chessPieceResponse.join());
   }
+
   // Step 4: Type: Queen and position any (between A1 - H8)
   if (type === QUEEN) {
     chessPieceResponse = queenPositionEvaluation(position);
-    console.log(chessPieceResponse.join());
+    logger.info(chessPieceResponse.join());
   }
   return chessPieceResponse;
 };
