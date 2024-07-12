@@ -20,9 +20,23 @@ const FLOW_STATUS = {
   FAILURE: 'failure'
 };
 
+const CHESS_BOARD_CONFIGURATION = {
+  COLUMN: {
+    A: 0,
+    B: 1,
+    C: 2,
+    D: 3,
+    E: 4,
+    F: 5,
+    G: 6,
+    H: 7
+  }
+};
+
 module.exports = {
   INPUT_PARAMS_LENGTH,
   CHESS_PIECE_TYPE,
   CHESS_PIECE_POSITION,
-  FLOW_STATUS
+  FLOW_STATUS,
+  CHESS_BOARD_CONFIGURATION
 };
