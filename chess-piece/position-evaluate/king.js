@@ -13,7 +13,7 @@ module.exports = (position) => {
   const positionSubString2NumberVal = Number(positionSubString2);
   const positionSubString1AsciiValue = positionSubString1.toUpperCase().charCodeAt();
 
-  // Add right side if start position is valid
+  // Add left side if start position is valid
   if (MINIMUM_ASCII_VALUE[0] < positionSubString1AsciiValue) {
     chessStartPositionArray = [
       String.fromCharCode(positionSubString1AsciiValue - MINIMUM_POSITION),
@@ -21,7 +21,7 @@ module.exports = (position) => {
     ];
   }
 
-  // Add left side if start position is valid
+  // Add right side if start position is valid
   if (MAXIMUM_ASCII_VALUE[0] > positionSubString1AsciiValue) {
     chessStartPositionArray = [
       ...chessStartPositionArray,
