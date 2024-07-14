@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
-    "eslint": "eslint --fix *.{ts,js,tsx}",
-    "format": "prettier --write *.{ts,js,tsx}"
+    "eslint": "eslint --fix **/*.{ts,js,tsx}",
+    "format": "prettier --write **/*.{ts,js,tsx}"
   },
   "author": "Nitesh Bagle",
   "license": "ISC",
